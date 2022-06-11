@@ -1,8 +1,13 @@
 source('https://rubygems.org')
 
-gem 'activerecord', '~> 6.1'
-gem 'pry', '~> 0.13.1'
-gem 'rake', '~> 13.0', '>= 13.0.1'
-gem 'sinatra-activerecord', '~> 2.0', '>= 2.0.21'
+gem 'puma'
+gem 'rake'
+gem 'sinatra', '= 2.1.0'
+gem 'sinatra-activerecord'
 gem 'sinatra-contrib'
-gem 'sqlite3', '~> 1.4', '>= 1.4.2'
+
+group :development do
+  gem 'faker'
+  gem 'pry'
+  gem 'sqlite3'
+end
