@@ -1,9 +1,18 @@
+# frozen_string_literal: true
+
+ENV['SINATRA_ENV'] ||= 'development'
+
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/namespace'
 require 'pry'
 
-set :database, 'sqlite3:db/lists.sqlite3'
+configure :development do
+  ActiveRecord::Base.establish_connection(
+    adapter: 'sqlite3',
+    database: 'db/lists.sqlite3'
+  )
+end
 
 require './models'
 
